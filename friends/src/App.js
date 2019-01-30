@@ -15,7 +15,7 @@ class App extends React.Component {
     axios
       .get("http://localhost:5000/friends")
       .then(res => {
-        console.log(res);
+        console.log(res.data);
       })
       .catch(err => {
         console.log(err);
