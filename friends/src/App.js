@@ -14,8 +14,12 @@ class App extends React.Component {
     /*Sets up axios to get data from API */
     axios
       .get("http://localhost:5000/friends")
-      .then(res => {})
-      .catch(err => {});
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
   render() {
     return (
