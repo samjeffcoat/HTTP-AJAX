@@ -1,9 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
 import FriendList from "./components/FriendList";
-
+import styled from "styled-components";
 import "./App.css";
 import AddNewFriend from "./components/addNewFriend";
+
+const Title = styled.h1`
+  font-size: 3em;
+  text-align: center;
+  color: blue;
+`;
+
+const Wrapper = styled.section`
+  background: papayawhip;
+  font-size: 1em;
+`;
 
 class App extends React.Component {
   /*Sets state to friends array*/
@@ -28,12 +39,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Friends list</h1>
-        <div>
+        <Title>Lambda Friends List</Title>
+        <Wrapper>
           {this.state.friends.map(friend => (
             <FriendList friend={friend} key={friend.id} />
           ))}
-        </div>
+        </Wrapper>
         <AddNewFriend />
       </div>
     );
