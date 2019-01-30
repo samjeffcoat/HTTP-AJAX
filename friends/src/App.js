@@ -3,6 +3,7 @@ import axios from "axios";
 import FriendList from "./components/FriendList";
 
 import "./App.css";
+import AddNewFriend from "./components/addNewFriend";
 
 class App extends React.Component {
   /*Sets state to friends array*/
@@ -33,6 +34,7 @@ class App extends React.Component {
             <FriendList friend={friend} key={friend.id} />
           ))}
         </div>
+        <AddNewFriend />
       </div>
     );
   }
