@@ -12,7 +12,10 @@ class App extends React.Component {
   componentDidMount() {
     console.log("CDM is running");
     /*Sets up axios to get data from API */
-    axios.get("http://localhost:5000/friends");
+    axios
+      .get("http://localhost:5000/friends")
+      .then()
+      .catch();
   }
   render() {
     return (
