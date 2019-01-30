@@ -16,6 +16,8 @@ class App extends React.Component {
       .get("http://localhost:5000/friends")
       .then(res => {
         console.log(res.data);
+
+        this.setState({ friends: res.data });
       })
       .catch(err => {
         console.log(err);
@@ -25,6 +27,12 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Friends list</h1>
+        <div>{this.state.friends.map(friend => (
+          friend = { friend }
+          key={friend.id}
+          ))}
+          
+          </div>
       </div>
     );
   }
