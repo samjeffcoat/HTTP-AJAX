@@ -8,6 +8,10 @@ class App extends React.Component {
   state = {
     friends: []
   };
+
+  componentDidMount() {
+    console.log("CDM is running");
+  }
   render() {
     return (
       <div className="App">
