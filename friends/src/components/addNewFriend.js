@@ -1,17 +1,16 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
-const AddNewFriend = props => {
+
+function AddNewFriend(props) {
   return (
-    <Form>
-      <FormGroup>
-        <Label for="newFriend">Friend </Label>
-        <Input type="text" name="friend" id="friendID" placeholder="name" />
-        <Input type="text" name="friend" id="friendID" placeholder="age" />
-        <Input type="text" name="friend" id="friendID" placeholder="email" />
-        <Button color="primary">AddFriend</Button>
-      </FormGroup>
-    </Form>
+    <form onSubmit={props.newFriend}>
+      <input
+        type="text"
+        name="name"
+        value={props.newFriend.name}
+        onChange={props.handleChanges}
+      />
+    </form>
   );
-};
+}
 
 export default AddNewFriend;
