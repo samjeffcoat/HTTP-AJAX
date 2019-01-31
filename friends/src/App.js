@@ -18,9 +18,17 @@ const Wrapper = styled.section`
 
 class App extends React.Component {
   /*Sets state to friends array*/
-  state = {
-    friends: []
-  };
+  constructor() {
+    super();
+    this.state = {
+      friends: [],
+      newFriend: {
+        name: " ",
+        age: null,
+        email: " "
+      }
+    };
+  }
 
   componentDidMount() {
     console.log("CDM is running");
