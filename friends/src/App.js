@@ -8,8 +8,8 @@ import {
   withRouter
 } from "react-router-dom";
 import "./App.css";
-import AddNewFriend from "./components/addNewFriend";
 import FriendList from "./components/FriendList";
+import FriendForm from "./components/FriendForm";
 
 const Title = styled.h1`
   font-size: 3em;
@@ -55,12 +55,16 @@ class App extends React.Component {
       }
     });
   };
+  addFriend = e => {
+    e.preventDefault();
+    axios.post("http://localhost:5000/friends");
+  };
   render() {
     return (
       <div className="App">
         <Title>Lambda Friends List</Title>
         <FriendList friends={this.state.friends} />
-        <AddNewFriend
+        <FriendForm
           friends={this.state.friends}
           newFriend={this.state.newFriend}
           handleChanges={this.handleChanges}

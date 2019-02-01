@@ -1,8 +1,8 @@
 import React from "react";
 
-function AddNewFriend(props) {
+function FriendForm(props) {
   return (
-    <form onSubmit={props.newFriend}>
+    <form onSubmit={props.AddNewFriend}>
       <input
         type="text"
         name="name"
@@ -29,4 +29,4 @@ function AddNewFriend(props) {
   );
 }
 
-export default AddNewFriend;
+export default FriendForm;
