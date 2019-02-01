@@ -50,6 +50,7 @@ class App extends React.Component {
       <div className="App">
         <Title>Lambda Friends List</Title>
         <FriendList friends={this.state.friends} />
+        <AddNewFriend friends={this.state.friends} />
       </div>
     );
   }
