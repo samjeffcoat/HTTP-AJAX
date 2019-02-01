@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
-import FriendList from "./components/FriendList";
 import styled from "styled-components";
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+  withRouter
+} from "react-router-dom";
 import "./App.css";
 import AddNewFriend from "./components/addNewFriend";
+import FriendList from "./components/FriendList";
 
 const Title = styled.h1`
   font-size: 3em;
   text-align: center;
   color: blue;
-`;
-
-const Wrapper = styled.section`
-  background: papayawhip;
-  font-size: 1em;
 `;
 
 class App extends React.Component {
@@ -48,12 +49,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Title>Lambda Friends List</Title>
-        <Wrapper>
-          {this.state.friends.map(friend => (
-            <FriendList friend={friend} key={friend.id} />
-          ))}
-        </Wrapper>
-        <AddNewFriend />
+        <FriendList friends={this.state.friends} />
       </div>
     );
   }

@@ -6,7 +6,7 @@ function AddNewFriend(props) {
       <input
         type="text"
         name="name"
-        value={props.newFriend.name}
+        value={props.friends.name}
         onChange={props.handleChanges}
       />
     </form>
