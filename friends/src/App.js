@@ -45,12 +45,26 @@ class App extends React.Component {
         console.log(err);
       });
   }
+
+  //Sets us up to be able to type into out boxes and only one the fields being typed into will accept new values
+  handleChanges = e => {
+    this.setState({
+      newFriend: {
+        ...this.state.newFriend,
+        [e.target.name]: e.target.value
+      }
+    });
+  };
   render() {
     return (
       <div className="App">
         <Title>Lambda Friends List</Title>
         <FriendList friends={this.state.friends} />
-        <AddNewFriend friends={this.state.friends} />
+        <AddNewFriend
+          friends={this.state.friends}
+          newFriend={this.state.newFriend}
+          handleChanges={this.handleChanges}
+        />
       </div>
     );
   }
