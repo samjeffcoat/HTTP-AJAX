@@ -24,6 +24,7 @@ function AddNewFriend(props) {
         placeholder="age"
         onChange={props.handleChanges}
       />
+      <button type="submit">Submit</button>
     </form>
   );
 }
